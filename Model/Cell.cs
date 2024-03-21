@@ -13,13 +13,8 @@ namespace ReversiMVC.Model.Console
         {
             if (player == null)
                 throw new ArgumentNullException(nameof(player), "Player cannot be null.");
-
-            /*if (!IsEmpty)
-                throw new InvalidOperationException("Cell is already marked.");*/
-
             MarkedByPlayer = player;
         }
-
         
     }
 }

@@ -12,10 +12,15 @@ using System;
         
         public event Action MatchDrawn;
         
+        
+        
         public ReversiEvents(Player firstPlayer, Player secondPlayer) : base(firstPlayer, secondPlayer)
         {
+            
         }
 
+        
+    
         protected override void PrepareField()
         {
             base.PrepareField();

@@ -8,7 +8,7 @@
         private const int FieldSize = 8; // Corrected to 8 for Reversi
 
         private readonly Player firstPlayer;
-        private readonly Player secondPlayer;
+        public readonly Player secondPlayer;
         private Cell[,] field;
         
         public Player CurrentPlayer { get; private set; }
@@ -17,11 +17,14 @@
 
         public Cell[,] GetField() => field.Clone() as Cell[,];
         public Player GetCellValue(int x, int y) => field[x, y].MarkedByPlayer;
-
+        
+        private Random random;
         public Reversi(Player firstPlayer, Player secondPlayer)
         {
             this.firstPlayer = firstPlayer;
             this.secondPlayer = secondPlayer;
+            field = new Cell[FieldSize, FieldSize];
+            random = new Random();
         }
 
         public void StartGame()
@@ -37,16 +40,19 @@
             if (IsEnded)
             {
                 Console.WriteLine("Game is already ended.");
+                return;
             }
 
             if (x < 0 || x >= FieldSize || y < 0 || y >= FieldSize)
             {
                 Console.WriteLine("Invalid cell coordinates.");
+                return;
             }
 
             if (!IsValidMove(x, y))
             {
                 Console.WriteLine("Invalid move. Try again.");
+                return;
             }
             
             MarkCell(x, y);
@@ -54,6 +60,24 @@
             CheckGameEnd();
         }
         
+        public void PlayGame()
+        {
+            while (!IsEnded)
+            {
+                Console.WriteLine("Enter your move (e.g., 'MOVE X Y'):");
+                string playerMoveInput = Console.ReadLine();
+                var playerMoveSplit = playerMoveInput.Split(new char[0], StringSplitOptions.RemoveEmptyEntries);
+                int playerX = int.Parse(playerMoveSplit[1]);
+                int playerY = int.Parse(playerMoveSplit[2]);
+                MakeMove(playerX, playerY);
+                
+                if (IsEnded)
+                    break;
+                
+                MakeRandomMove();
+                
+            }
+        }
         public void MakeRandomMove()
         {
             Random random = new Random();
@@ -186,11 +210,17 @@
                 }
             }
             
-            int mid = FieldSize / 2;
+            /*int mid = FieldSize / 2;
             field[mid - 1, mid - 1].MarkBy(firstPlayer);
             field[mid - 1, mid].MarkBy(secondPlayer);
             field[mid, mid - 1].MarkBy(secondPlayer);
-            field[mid, mid].MarkBy(firstPlayer);
+            field[mid, mid].MarkBy(firstPlayer);*/
+            
+            int mid = FieldSize / 2;
+            field[mid - 1, mid - 1].MarkBy(secondPlayer);
+            field[mid - 1, mid].MarkBy(firstPlayer);
+            field[mid, mid - 1].MarkBy(firstPlayer);
+            field[mid, mid].MarkBy(secondPlayer);
             
             CalculateAndSetPossibleMoves();
         }
@@ -198,27 +228,48 @@
         
         private void CheckGameEnd()
         {
+            var firstPlayerCount = 0;
+            var secondPlayerCount = 0;
             var hasEmptyCells = false;
-            foreach (var row in GetAllRows())
-            {
-                var player = row[0].MarkedByPlayer;
-                if (player != null && row.All(cell => cell.MarkedByPlayer == player))
-                {
-                    EndGame(player);
-                    return;
-                }
 
-                if (row.Any(cell => cell.IsEmpty))
+            for (int x = 0; x < FieldSize; x++)
+            {
+                for (int y = 0; y < FieldSize; y++)
                 {
-                    hasEmptyCells = true;
+                    if (field[x, y].MarkedByPlayer == firstPlayer)
+                    {
+                        firstPlayerCount++;
+                    }
+                    else if (field[x, y].MarkedByPlayer == secondPlayer)
+                    {
+                        secondPlayerCount++;
+                    }
+                    else
+                    {
+                        hasEmptyCells = true;
+                    }
                 }
             }
 
-            if (!hasEmptyCells)
+            if (!hasEmptyCells || (firstPlayerCount == 0 || secondPlayerCount == 0))
             {
-                EndGame();
+                if (firstPlayerCount > secondPlayerCount)
+                {
+                    EndGame(firstPlayer);
+                }
+                else if (secondPlayerCount > firstPlayerCount)
+                {
+                    EndGame(secondPlayer);
+                }
+                else
+                {
+                    EndGame(); // Game ends in a draw
+                }
             }
         }
+
+        
+
 
         private IEnumerable<List<Cell>> GetAllRows()
         {

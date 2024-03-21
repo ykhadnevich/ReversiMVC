@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v7.0": {
       "ReversiMVC/1.0.0": {
         "dependencies": {
-          "Newtonsoft.Json": "13.0.3"
+          "Newtonsoft.Json": "13.0.3",
+          "Nunit.Framework.TestCaseStorage": "1.0.1"
         },
         "runtime": {
           "ReversiMVC.dll": {}
@@ -19,6 +20,25 @@
           "lib/net6.0/Newtonsoft.Json.dll": {
             "assemblyVersion": "13.0.0.0",
             "fileVersion": "13.0.3.27908"
+          }
+        }
+      },
+      "NUnit/2.6.1": {
+        "runtime": {
+          "lib/nunit.framework.dll": {
+            "assemblyVersion": "2.6.1.12217",
+            "fileVersion": "2.6.1.12217"
+          }
+        }
+      },
+      "Nunit.Framework.TestCaseStorage/1.0.1": {
+        "dependencies": {
+          "NUnit": "2.6.1"
+        },
+        "runtime": {
+          "lib/nunit.framework.testcasestorage.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       }
@@ -36,6 +56,20 @@
       "sha512": "sha512-HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
       "path": "newtonsoft.json/13.0.3",
       "hashPath": "newtonsoft.json.13.0.3.nupkg.sha512"
+    },
+    "NUnit/2.6.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-byiyAOxTyUpc9sTasSxdDsGGutZ+jMRclWJgwq9GURSmCFvPuqD2wDTUiJGdH+pTCIloqZBPDGl9EkxGr8Id/Q==",
+      "path": "nunit/2.6.1",
+      "hashPath": "nunit.2.6.1.nupkg.sha512"
+    },
+    "Nunit.Framework.TestCaseStorage/1.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cor8GU/Zw6k85aLuH8REMGDaTJ2lxhi0ocsbz4gv6w/UVblXjENx8FMJHy6fNJTfhPcvB6ZBjPueDy3ZJJMUpg==",
+      "path": "nunit.framework.testcasestorage/1.0.1",
+      "hashPath": "nunit.framework.testcasestorage.1.0.1.nupkg.sha512"
     }
   }
 }

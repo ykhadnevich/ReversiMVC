@@ -15,3 +15,5 @@ C:\Users\user\RiderProjects\ReversiMVC\ReversiMVC\obj\Debug\net7.0\refint\Revers
 C:\Users\user\RiderProjects\ReversiMVC\ReversiMVC\obj\Debug\net7.0\ReversiMVC.pdb
 C:\Users\user\RiderProjects\ReversiMVC\ReversiMVC\obj\Debug\net7.0\ReversiMVC.genruntimeconfig.cache
 C:\Users\user\RiderProjects\ReversiMVC\ReversiMVC\obj\Debug\net7.0\ref\ReversiMVC.dll
+C:\Users\user\RiderProjects\ReversiMVC\ReversiMVC\bin\Debug\net7.0\nunit.framework.dll
+C:\Users\user\RiderProjects\ReversiMVC\ReversiMVC\bin\Debug\net7.0\nunit.framework.testcasestorage.dll

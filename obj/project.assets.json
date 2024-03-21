@@ -14,6 +14,27 @@
             "related": ".xml"
           }
         }
+      },
+      "NUnit/2.6.1": {
+        "type": "package",
+        "compile": {
+          "lib/nunit.framework.dll": {}
+        },
+        "runtime": {
+          "lib/nunit.framework.dll": {}
+        }
+      },
+      "Nunit.Framework.TestCaseStorage/1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "NUnit": "2.6.1"
+        },
+        "compile": {
+          "lib/nunit.framework.testcasestorage.dll": {}
+        },
+        "runtime": {
+          "lib/nunit.framework.testcasestorage.dll": {}
+        }
       }
     }
   },
@@ -47,11 +68,39 @@
         "newtonsoft.json.nuspec",
         "packageIcon.png"
       ]
+    },
+    "NUnit/2.6.1": {
+      "sha512": "byiyAOxTyUpc9sTasSxdDsGGutZ+jMRclWJgwq9GURSmCFvPuqD2wDTUiJGdH+pTCIloqZBPDGl9EkxGr8Id/Q==",
+      "type": "package",
+      "path": "nunit/2.6.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/nunit.framework.dll",
+        "lib/nunit.framework.xml",
+        "license.txt",
+        "nunit.2.6.1.nupkg.sha512",
+        "nunit.nuspec"
+      ]
+    },
+    "Nunit.Framework.TestCaseStorage/1.0.1": {
+      "sha512": "cor8GU/Zw6k85aLuH8REMGDaTJ2lxhi0ocsbz4gv6w/UVblXjENx8FMJHy6fNJTfhPcvB6ZBjPueDy3ZJJMUpg==",
+      "type": "package",
+      "path": "nunit.framework.testcasestorage/1.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/nunit.framework.testcasestorage.dll",
+        "lib/nunit.framework.testcasestorage.pdb",
+        "nunit.framework.testcasestorage.1.0.1.nupkg.sha512",
+        "nunit.framework.testcasestorage.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "Newtonsoft.Json >= 13.0.3"
+      "Newtonsoft.Json >= 13.0.3",
+      "Nunit.Framework.TestCaseStorage >= 1.0.1"
     ]
   },
   "packageFolders": {
@@ -102,6 +151,10 @@
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[13.0.3, )"
+          },
+          "Nunit.Framework.TestCaseStorage": {
+            "target": "Package",
+            "version": "[1.0.1, )"
           }
         },
         "imports": [
@@ -123,5 +176,27 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'NUnit 2.6.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "NUnit",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Nunit.Framework.TestCaseStorage 1.0.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Nunit.Framework.TestCaseStorage",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
 }

@@ -1,10 +1,33 @@
 {
   "version": 2,
-  "dgSpecHash": "uHQQUWRi261chijMKoyC0XbX4UUWcJhNMvFZW01gfTfDBmgRO1jTXJJPZ2uc6C1e/RhjH2Hd4NTxl8nsx54Oow==",
+  "dgSpecHash": "zGO/5q7K8wZWkcqxCVpYY4PhmS7Ta7vKFN1sMt3KwP9tbc1HNlo4+CwyxZe2q8GkRJdWBn3flt5KJdERZsmhAw==",
   "success": true,
   "projectFilePath": "C:\\Users\\user\\RiderProjects\\ReversiMVC\\ReversiMVC\\ReversiMVC.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\user\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+    "C:\\Users\\user\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\nunit\\2.6.1\\nunit.2.6.1.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\nunit.framework.testcasestorage\\1.0.1\\nunit.framework.testcasestorage.1.0.1.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'NUnit 2.6.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "NUnit",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Nunit.Framework.TestCaseStorage 1.0.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Nunit.Framework.TestCaseStorage",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
 }
